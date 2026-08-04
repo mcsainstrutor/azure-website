@@ -6,9 +6,6 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  ACTIONS_AUDIT_NODES: warn # Controls how strict the Node deprecation enforcement is
-
 jobs:
   build:
     runs-on: windows-latest
@@ -21,7 +18,7 @@ jobs:
         uses: microsoft/setup-msbuild@v2
 
       - name: Setup NuGet
-        uses: NuGet/setup-nuget@v2
+        uses: NuGet/setup-nuget@v2.0.1
 
       - name: Restore NuGet Packages
         run: nuget restore your-solution-file.sln # FIXME: Replace with your actual .sln file name
