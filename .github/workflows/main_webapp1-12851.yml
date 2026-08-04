@@ -6,12 +6,13 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  ACTIONS_AUDIT_NODES: warn # Controls how strict the Node deprecation enforcement is
+
 jobs:
   build:
     runs-on: windows-latest
-env:
-  ACTIONS_AUDIT_NODES: warn # Controls how strict the Node deprecation enforcement is
-  
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
